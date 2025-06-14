@@ -7,9 +7,26 @@ const checkout = ref({
   name: '',
   firstname: '',
   email: '',
+  billing: {
+    phone: '',
+    address: {
+      address: '',
+      post_code: '',
+      city: '',
+    },
+  },
+  shipping: {
+    address: {
+      address: '',
+      post_code: '',
+      city: '',
+    },
+  },
   shipToDifferentAddress: false,
 })
-const onSubmit = () => {}
+const onSubmit = () => {
+  console.log(checkout.value)
+}
 </script>
 <template>
   <form @submit="onSubmit()" class="max-w-3xl mx-auto my-8">
@@ -28,7 +45,7 @@ const onSubmit = () => {}
       <label for="email">Email</label>
       <input id="email" type="email" required v-model="checkout.email" />
     </div>
-    <FormBilling />
+    <FormBilling v-model="checkout.billing" />
     <div>
       <input
         type="checkbox"
@@ -37,7 +54,7 @@ const onSubmit = () => {}
       />
       <label for="ship-to-different-address"> Expédier à une adresse différente </label>
     </div>
-    <FormShipping v-if="checkout.shipToDifferentAddress" />
+    <FormShipping v-if="checkout.shipToDifferentAddress" v-model="checkout.shipping" />
     <input type="submit" value="Passer ma commande" />
   </form>
 </template>
