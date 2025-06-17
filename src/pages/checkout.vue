@@ -21,7 +21,7 @@ const checkout = ref({
 const onSubmit = () => {}
 </script>
 <template>
-  <form @submit="onSubmit()" class="max-w-3xl mx-auto my-8">
+  <form @submit.prevent="onSubmit" class="max-w-3xl mx-auto my-8">
     <h1>Votre commande</h1>
     <div class="grid grid-cols-2 gap-4">
       <div>
@@ -35,7 +35,7 @@ const onSubmit = () => {}
     </div>
     <div>
       <label for="email">Email</label>
-      <input id="email" type="email" required v-model="checkout.email" />
+      <input id="email" type="email" required v-model.trim="checkout.email" />
     </div>
     <h2>Adresse de facturation</h2>
     <div>
@@ -44,7 +44,7 @@ const onSubmit = () => {}
     </div>
     <div>
       <label for="post_code">Code Postal</label>
-      <input id="post_code" type="text" required v-model="checkout.billing.post_code" />
+      <input id="post_code" type="text" required v-model.number="checkout.billing.post_code" />
     </div>
     <div>
       <label for="city">Ville</label>
@@ -70,7 +70,12 @@ const onSubmit = () => {}
       </div>
       <div>
         <label for="shipping-post-code">Code Postal</label>
-        <input id="shipping-post-code" type="text" required v-model="checkout.shipping.post_code" />
+        <input
+          id="shipping-post-code"
+          type="text"
+          required
+          v-model.number="checkout.shipping.post_code"
+        />
       </div>
       <div>
         <label for="shipping-city">Ville</label>
