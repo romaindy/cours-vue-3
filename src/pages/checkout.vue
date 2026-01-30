@@ -44,7 +44,7 @@ const onSubmit = () => {}
     </div>
     <div>
       <label for="post_code">Code Postal</label>
-      <input id="post_code" type="text" required v-model.number="checkout.billing.post_code" />
+      <input id="post_code" type="number" required v-model.number="checkout.billing.post_code" />
     </div>
     <div>
       <label for="city">Ville</label>
@@ -72,7 +72,7 @@ const onSubmit = () => {}
         <label for="shipping-post-code">Code Postal</label>
         <input
           id="shipping-post-code"
-          type="text"
+          type="number"
           required
           v-model.number="checkout.shipping.post_code"
         />
