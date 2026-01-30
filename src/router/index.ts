@@ -6,7 +6,7 @@ const routes = Object.entries(pages).map(([path, component]) => {
   const name = path.match(/\.\/pages\/(.*)\.vue$/)[1]
 
   return {
-    path: name.toLowerCase() === 'home' ? '/' : `/${name.toLowerCase()}`,
+    path: name.toLowerCase() === 'index' ? '/' : `/${name.toLowerCase()}`,
     name,
     component: component.default,
   }
