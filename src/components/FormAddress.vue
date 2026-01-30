@@ -1,11 +1,5 @@
 <script setup>
-import { ref } from 'vue'
-
-const address = ref({
-  address: '',
-  post_code: '',
-  city: '',
-})
+const address = defineModel()
 </script>
 <template>
   <div>
