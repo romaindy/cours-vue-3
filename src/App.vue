@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import FormCheckout from '@/components/Checkout/FormCheckout.vue'
+import Checkout from '@/pages/checkout.vue'
 </script>
 <template>
-  <FormCheckout />
+  <Checkout />
 </template>
