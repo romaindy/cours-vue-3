@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import Checkout from '@/pages/checkout.vue'
+</script>
 <template>
-  <h1>Hello World !</h1>
+  <Checkout />
 </template>
