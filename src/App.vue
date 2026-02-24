@@ -1,3 +1,6 @@
+<script setup lang="ts">
+import FormCheckout from '@/components/Checkout/FormCheckout.vue'
+</script>
 <template>
-  <h1>Hello World !</h1>
+  <FormCheckout />
 </template>
