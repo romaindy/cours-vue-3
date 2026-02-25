@@ -83,5 +83,7 @@ const onSubmit = () => {}
       </div>
     </div>
     <input type="submit" value="Passer ma commande" />
+    <h2>Debug</h2>
+    <pre>{{ checkout }}</pre>
   </form>
 </template>
